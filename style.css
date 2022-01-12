@@ -28,6 +28,8 @@ body {
 	padding: 1em;
 	color: var(--neutral);
 	margin: 0;
+	background-size: 30em;
+	background-origin: border-box;
 }
 
 ul {
@@ -40,6 +42,7 @@ header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	background: var(--darkblue);
 }
 
 .logo img {
@@ -59,15 +62,14 @@ header {
 	font-weight: 400;
 }
 
+a {
+	text-decoration: none;
+	color: var(--neutral);
+	font-family: var(--opensans);
+}
 /* Intro */
 
 .intro {
-	background-image: url(/images/bg-curvy-mobile.svg);
-	background-origin: border-box;
-	/* background-position: bottom; */
-	background-repeat: no-repeat;
-	background-size: 30em;
-	background-position: left -5rem top -4em;
 	/* overflow: visible; */
 	text-align: center;
 }
@@ -75,6 +77,15 @@ header {
 .intro-img {
 	margin: 3em auto;
 	width: 100%;
+}
+
+.intro-section {
+	/* background-color: red; */
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: left -40rem top 30em;
+	background-image: url(/images/bg-curvy-mobile.svg);
+	background-color: var(--darkblue);
 }
 
 h1 {
@@ -112,6 +123,7 @@ p {
 	justify-content: center;
 	gap: 10em;
 	padding: 12em 0;
+	background: var(--darkblue-bg);
 }
 
 .features h1 {
@@ -123,6 +135,10 @@ p {
 	font-size: 0.95em;
 	line-height: 1.5em;
 	font-family: var(--opensans);
+}
+
+.productive {
+	background: var(--darkblue-bg);
 }
 
 .productive h1 {
@@ -160,7 +176,7 @@ p {
 
 .quotes {
 	position: absolute;
-	width: 8%;
+	width: 30px;
 	margin-top: -1.5em;
 	margin-left: 0.5em;
 }
@@ -170,6 +186,7 @@ p {
 	display: flex;
 	flex-direction: column;
 	gap: 1.5em;
+	background: var(--darkblue-bg);
 }
 
 .card-bg {
@@ -184,7 +201,7 @@ p {
 	line-height: 1.5em;
 }
 
-.card-bg img {
+.testimonials-avatar {
 	width: 40px;
 	border-radius: 100%;
 	float: left;
@@ -316,6 +333,22 @@ p {
 		line-height: 1.4em;
 	}
 
+	a:hover,
+	a:active {
+		text-decoration: underline;
+		transition: 250ms;
+	}
+
+	.intro:hover > .button {
+		background: linear-gradient(
+			to left,
+			hsl(176, 68%, 64%),
+			hsl(198, 60%, 50%) 90%
+		);
+		transition: background 500ms 0.2s 0s ease;
+		text-decoration: none;
+	}
+
 	.intro p {
 		font-family: var(--opensans);
 		font-size: 1.8ch;
@@ -389,6 +422,16 @@ p {
 		padding: 0 3em;
 	}
 
+	.productive a:hover {
+		border-bottom: 2px solid var(--neutral);
+		color: var(--neutral);
+		text-decoration: none;
+	}
+
+	.productive a:hover {
+		color: var(--neutral);
+	}
+
 	.productive-info {
 		padding-left: 4em;
 		width: 70%;
@@ -418,10 +461,10 @@ p {
 
 	.quotes {
 		position: absolute;
-		width: 3%;
+		width: 80px;
 		z-index: -500;
-		margin-top: -1.9em;
-		margin-left: 7.75em;
+		margin-top: -4.4em;
+		margin-left: -2em;
 	}
 
 	.card-bg p {
@@ -430,7 +473,7 @@ p {
 		line-height: 1.75em;
 	}
 
-	.card-bg img {
+	.testimonials-avatar {
 		width: 30px;
 		border-radius: 100%;
 		float: left;
@@ -440,6 +483,10 @@ p {
 		width: 50vw;
 		margin: 0 auto;
 		padding: 3em;
+		margin-bottom: -150px;
+		z-index: 300;
+		position: relative;
+		box-shadow: 3px 5px 15px -4px var(--darkblue-footer);
 	}
 
 	.signup h1 {
@@ -454,27 +501,90 @@ p {
 		column-gap: 2em;
 	}
 
+	.signup-input a:hover {
+		background: linear-gradient(
+			to left,
+			hsl(176, 68%, 64%),
+			hsl(198, 60%, 50%) 90%
+		);
+		transition: background 500ms 0.2s 0s ease;
+		text-decoration: none;
+	}
+
 	.signup input {
 		width: 60;
 	}
 
 	.bottom-footer {
 		background: var(--darkblue-footer);
-		margin: 0;
-		padding: 0;
 		display: flex;
+		flex-direction: column;
+		/* align-items: center; */
+		justify-content: center;
+		padding: 15em 6em 10em 6em;
+	}
+
+	.section-footer-flex {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		padding: 3em;
 	}
 
 	.contact-us {
 		display: flex;
+		/* order: 0; */
+		flex: 0 0 30rem;
+		padding: 0;
+	}
+
+	.location p {
+		font-size: 1.25rem;
 	}
 
 	.phone {
 		display: flex;
 		flex-direction: column;
+		flex: 0 0 13rem;
+		flex-wrap: nowrap;
+		gap: 0;
+		line-height: 1px;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+
+	.phone img {
+		padding-right: 1em;
+	}
+
+	.phone img {
 	}
 
 	.footer-logo-img {
 		width: 15em;
+	}
+
+	.about-us {
+		display: flex;
+		gap: 1.5em;
+		flex-wrap: wrap;
+		/* box-sizing: border-box; */
+		/* height: 10em; */
+		max-height: 100%;
+		overflow: auto;
+	}
+
+	.social-media {
+		padding: 0;
+	}
+
+	.social-media i:hover {
+		color: var(--accent-cyan-gradient);
+		border-color: var(--accent-cyan-gradient);
+	}
+
+	header li:hover a {
+		font-weight: 700;
+		text-decoration: underline;
 	}
 }
